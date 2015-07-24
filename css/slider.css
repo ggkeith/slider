@@ -7,7 +7,7 @@
 	width: 600px;
 	height: 400px;
 	overflow: hidden;
-	margin 30px auto;
+	margin: 30px auto;
 }
 
 #slider>img {
@@ -23,4 +23,12 @@ a {
 	margin-top: 30px;
 	text-decoration: none;
 	color: #666;
+}
+
+a.left{
+	float: left;
+}
+
+a.right {
+	float: right;
 }

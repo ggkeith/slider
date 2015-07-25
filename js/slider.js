@@ -24,3 +24,28 @@ function startSlider() {
 	}, 3000)
 
 }
+
+function prev() {
+	newSLide = sliderInt - 1;
+	showSlide(newSlide);
+}
+
+function next() {
+	newSlide = sliderInt +1;
+	showSlide(newSlide);
+}
+
+function showSlide(id) {
+	if (id > count) {
+			id = 1;
+		}else if(id < 1) {
+			id = count;
+		}
+
+		$('#slider > img').fadeOut(300);
+		$('#slider > img#' + sliderNext).fadeIn(300);
+
+		sliderInt = id;
+		sliderNext = id + 1;
+
+}

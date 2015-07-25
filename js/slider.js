@@ -6,6 +6,7 @@ $(document).ready(function() {
 	startSlider();
 });
 
+//Function to start the photo slider
 function startSlider() {
 	count = $("#slider > img").size();
 
@@ -25,14 +26,22 @@ function startSlider() {
 
 }
 
+//Previous button functionality
 function prev() {
 	newSLide = sliderInt - 1;
 	showSlide(newSlide);
 }
 
+//Next button functionality
 function next() {
 	newSlide = sliderInt +1;
 	showSlide(newSlide);
+}
+
+//function to stop the photo loop
+function stopLoop() {
+	window.clearInterval(loop);
+
 }
 
 function showSlide(id) {
@@ -47,5 +56,16 @@ function showSlide(id) {
 
 		sliderInt = id;
 		sliderNext = id + 1;
+		startSlider();
 
 }
+
+//stops slideshow when mouse hovers over photo
+$('#slider > img').hover(
+	function() {
+		stopLoop();
+	},
+	function() {
+		startSlider();
+	}
+);
